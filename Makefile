@@ -1,3 +1,6 @@
+start:
+	cd signatories-ledger && daml start
+
 build:
 	cd signatories-ledger && daml build
 	cd signatories-ledger && daml codegen js -o daml.js .daml/dist/*.dar

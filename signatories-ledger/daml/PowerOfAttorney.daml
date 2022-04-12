@@ -1,0 +1,14 @@
+module PowerOfAttorney where
+{-
+corporateSecretary can issue a PowerOfAttorney to an authorizedSignatory for a specific legalEntity
+-}
+
+template PowerOfAttorney
+    with
+        authorizedSignatory: Party -- person authorized to sign
+        legalEntity: Party -- legal entity for which the  authorizedSignatory can sign
+        corporateSecretary: Party -- corporateSecretary makes sure authorizedSignatory and legalEntity are legit
+        authorizedSignatoryRole: Text -- role of autorizedSignatory for this legalEntity
+        issued: Time -- time when the power of attorney was issued
+    where
+        signatory corporateSecretary

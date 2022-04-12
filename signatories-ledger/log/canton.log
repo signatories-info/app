@@ -1,0 +1,648 @@
+2022-04-12 18:09:02,310 [main] INFO  c.d.canton.CantonCommunityApp$ - Starting Canton version 2.0.0
+2022-04-12 18:09:03,102 [main] INFO  c.d.c.e.CommunityEnvironment - Deriving 8 as number of threads from 'sys.runtime.availableProcessors()'. Please use '-Dscala.concurrent.context.numThreads' to override.
+2022-04-12 18:09:03,352 [canton-env-execution-context-23] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+2022-04-12 18:09:03,474 [main] INFO  c.d.c.e.CommunityEnvironment tid:5992abc8033a0cf3894d95d15da4f06a - Automatically starting all instances
+2022-04-12 18:09:03,737 [main] INFO  c.d.c.d.DomainNodeBootstrap:domain=local - Starting admin-api services on CommunityAdminServerConfig(127.0.0.1,Some(54664),None,Some(KeepAliveServerConfig(40s,20s,20s)),10485760)
+2022-04-12 18:09:04,074 [canton-env-execution-context-29] INFO  c.d.c.d.DomainNodeBootstrap:domain=local - Node is not initialized yet. Performing automated default initialization.
+2022-04-12 18:09:04,236 [canton-env-execution-context-23] INFO  c.d.c.d.DomainNodeBootstrap:domain=local - Initializing node with id NodeId(local::12205b86602e...)
+2022-04-12 18:09:04,422 [canton-env-execution-context-25] INFO  c.d.c.d.t.DomainTopologyManager:domain=local tid:31fc6c6cae634c20c9a6f29565d921c7 - Applied topology transaction Add NamespaceDelegation(12205b86602e..., SigningPublicKey(id = 12205b86602e..., format = Tink, scheme = Ed25519), true) at 2022-04-12T22:09:04.419201Z
+2022-04-12 18:09:04,452 [canton-env-execution-context-24] INFO  c.d.c.d.t.DomainTopologyManager:domain=local tid:31fc6c6cae634c20c9a6f29565d921c7 - Applied topology transaction Replace DomainParametersChange(local::12205b86602e..., DynamicDomainParameters(30s, 30s, 1m, 0.25s, 1m)) at 2022-04-12T22:09:04.451352Z
+2022-04-12 18:09:04,470 [canton-env-execution-context-23] INFO  c.d.c.d.t.DomainTopologyManager:domain=local tid:31fc6c6cae634c20c9a6f29565d921c7 - Applied topology transaction Add OwnerToKeyMapping(DOM::local::12205b86602e..., SigningPublicKey(id = 1220928da3fe..., format = Tink, scheme = Ed25519)) at 2022-04-12T22:09:04.469547Z
+2022-04-12 18:09:04,679 [canton-env-execution-context-29] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add OwnerToKeyMapping(MED::local::12205b86602e..., SigningPublicKey(id = 12208c685596..., format = Tink, scheme = Ed25519)) at 2022-04-12T22:09:04.677974Z
+2022-04-12 18:09:04,690 [canton-env-execution-context-24] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add MediatorDomainState(Both, local::12205b86602e..., MED::local::12205b86602e...) at 2022-04-12T22:09:04.689484Z
+2022-04-12 18:09:04,981 [canton-env-execution-context-31] INFO  c.d.c.d.s.s.GrpcSequencerInitializationService:domain=local - Initializing Sequencer
+2022-04-12 18:09:05,026 [canton-env-execution-context-24] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add OwnerToKeyMapping(SEQ::local::12205b86602e..., SigningPublicKey(id = 12204f49e2f5..., format = Tink, scheme = Ed25519)) at 2022-04-12T22:09:05.025211Z
+2022-04-12 18:09:05,296 [canton-env-execution-context-29] INFO  c.d.c.d.DomainNodeBootstrap:domain=local - Starting public services with config CommunityPublicServerConfig(127.0.0.1,Some(54663),None,Some(KeepAliveServerConfig(40s,20s,20s)),1m,1h)
+2022-04-12 18:09:05,407 [canton-env-execution-context-33] INFO  c.d.c.s.c.SequencerClient:domain=local/client=topology-manager - No event found up to 0001-01-01T00:00:00Z. Resubscribing from the beginning.
+2022-04-12 18:09:05,408 [canton-env-execution-context-33] INFO  c.d.c.s.c.SequencerClient:domain=local/client=topology-manager - Processing events from the SequencedEventStore from 0001-01-01T00:00:00.000001Z on
+2022-04-12 18:09:05,422 [canton-env-execution-context-29] INFO  c.d.c.s.c.SequencerClient:domain=local/client=topology-manager - Starting subscription at timestamp None; next counter 0
+2022-04-12 18:09:05,752 [canton-env-execution-context-24] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Updated topology change delay from=0s to 0.25s
+2022-04-12 18:09:05,754 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 1/6 Add NamespaceDelegation(12205b86602e..., SigningPublicKey(id = 12205b86602e..., format = Tink, scheme = Ed25519), true) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,755 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 2/6 Replace DomainParametersChange(local::12205b86602e..., DynamicDomainParameters(30s, 30s, 1m, 0.25s, 1m)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,756 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 3/6 Add OwnerToKeyMapping(DOM::local::12205b86602e..., SigningPublicKey(id = 1220928da3fe..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,757 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 4/6 Add OwnerToKeyMapping(MED::local::12205b86602e..., SigningPublicKey(id = 12208c685596..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,757 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 5/6 Add MediatorDomainState(Both, local::12205b86602e..., MED::local::12205b86602e...) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,758 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 6/6 Add OwnerToKeyMapping(SEQ::local::12205b86602e..., SigningPublicKey(id = 12204f49e2f5..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,834 [canton-env-execution-context-29] INFO  c.d.c.s.c.SequencerClient:domain=local/client=mediator - No event found up to 0001-01-01T00:00:00Z. Resubscribing from the beginning.
+2022-04-12 18:09:05,834 [canton-env-execution-context-29] INFO  c.d.c.s.c.SequencerClient:domain=local/client=mediator - Processing events from the SequencedEventStore from 0001-01-01T00:00:00.000001Z on
+2022-04-12 18:09:05,835 [canton-env-execution-context-29] INFO  c.d.c.s.c.SequencerClient:domain=local/client=mediator - Starting subscription at timestamp None; next counter 0
+2022-04-12 18:09:05,868 [canton-env-execution-context-33] INFO  c.d.c.d.m.Mediator:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Caught up with batch with counter=0 with sequencer with 296 ms delay
+2022-04-12 18:09:05,880 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Updated topology change delay from=0s to 0.25s
+2022-04-12 18:09:05,881 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 1/6 Add NamespaceDelegation(12205b86602e..., SigningPublicKey(id = 12205b86602e..., format = Tink, scheme = Ed25519), true) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,882 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 2/6 Replace DomainParametersChange(local::12205b86602e..., DynamicDomainParameters(30s, 30s, 1m, 0.25s, 1m)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,882 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 3/6 Add OwnerToKeyMapping(DOM::local::12205b86602e..., SigningPublicKey(id = 1220928da3fe..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,883 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 4/6 Add OwnerToKeyMapping(MED::local::12205b86602e..., SigningPublicKey(id = 12208c685596..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,884 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 5/6 Add MediatorDomainState(Both, local::12205b86602e..., MED::local::12205b86602e...) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,885 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:07989c0388546aed24f2952f7e61c4f0 - Storing topology transaction 6/6 Add OwnerToKeyMapping(SEQ::local::12205b86602e..., SigningPublicKey(id = 12204f49e2f5..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:05.572629Z) (epsilon=0 ms)
+2022-04-12 18:09:05,972 [main] INFO  c.d.c.p.ParticipantNodeBootstrap:participant=sandbox - Starting admin-api services on CommunityAdminServerConfig(127.0.0.1,Some(54662),None,Some(KeepAliveServerConfig(40s,20s,20s)),10485760)
+2022-04-12 18:09:05,975 [canton-env-execution-context-24] INFO  c.d.c.p.ParticipantNodeBootstrap:participant=sandbox - Node is not initialized yet. Performing automated default initialization.
+2022-04-12 18:09:06,045 [canton-env-execution-context-46] INFO  c.d.c.p.ParticipantNodeBootstrap:participant=sandbox - Initializing node with id NodeId(sandbox::1220d8b38701...)
+2022-04-12 18:09:06,061 [canton-env-execution-context-23] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:6297aa963fa5546d9c7243b2eeb47eef - Applied topology transaction Add NamespaceDelegation(1220d8b38701..., SigningPublicKey(id = 1220d8b38701..., format = Tink, scheme = Ed25519), true) at 2022-04-12T22:09:06.060589Z
+2022-04-12 18:09:06,177 [canton-env-execution-context-46] INFO  c.d.c.p.s.CantonSyncService:participant=sandbox tid:09bdb9c404d204feb76aafed8d855367 - Recovering published timely rejections
+2022-04-12 18:09:06,185 [canton-env-execution-context-26] INFO  c.d.c.p.s.CantonSyncService:participant=sandbox tid:09bdb9c404d204feb76aafed8d855367 - Publishing the unpublished events from the ParticipantEventLog
+2022-04-12 18:09:06,387 [canton-env-execution-context-46] INFO  c.d.p.s.backend.VerifiedDataSource - Attempting to connect to the database (attempt 1/600), context: {participant: "sandbox"}
+2022-04-12 18:09:06,594 [canton-env-execution-context-31] INFO  c.d.platform.store.FlywayMigrations - Ensuring Flyway migration has either not started or there are no pending migrations..., context: {participant: "sandbox"}
+2022-04-12 18:09:06,624 [canton-env-execution-context-31] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 8.4.1 by Redgate
+2022-04-12 18:09:06,625 [canton-env-execution-context-31] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:h2:mem:ledger_api_sandbox1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b_3da4e60a70f7455c8ec31c457dca7cae (H2 2.1)
+2022-04-12 18:09:06,639 [canton-env-execution-context-31] INFO  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.1.210 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.0.206.
+2022-04-12 18:09:06,661 [canton-env-execution-context-31] INFO  c.d.platform.store.FlywayMigrations - Running Flyway migration on empty database with 1 migrations pending..., context: {participant: "sandbox"}
+2022-04-12 18:09:06,662 [canton-env-execution-context-31] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 8.4.1 by Redgate
+2022-04-12 18:09:06,664 [canton-env-execution-context-31] INFO  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.1.210 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.0.206.
+2022-04-12 18:09:06,668 [canton-env-execution-context-31] INFO  o.f.c.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.001s)
+2022-04-12 18:09:06,671 [canton-env-execution-context-31] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2022-04-12 18:09:06,689 [canton-env-execution-context-31] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2022-04-12 18:09:06,716 [canton-env-execution-context-31] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Append only schema"
+2022-04-12 18:09:06,753 [canton-env-execution-context-31] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.065s)
+2022-04-12 18:09:06,753 [canton-env-execution-context-31] INFO  c.d.platform.store.FlywayMigrations - Flyway schema migration finished successfully, applying 1 steps on empty database., context: {participant: "sandbox"}
+2022-04-12 18:09:06,784 [canton-env-execution-context-29] INFO  c.d.p.indexer.RecoveringIndexer - Starting Indexer Server, context: {participant: "sandbox"}
+2022-04-12 18:09:06,800 [canton-env-execution-context-29] INFO  com.zaxxer.hikari.HikariDataSource - daml.index.db.connection.indexer - Starting...
+2022-04-12 18:09:06,812 [canton-env-execution-context-29] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,819 [canton-env-execution-context-29] INFO  com.zaxxer.hikari.HikariDataSource - daml.index.db.connection.indexer - Start completed.
+2022-04-12 18:09:06,838 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,844 [daml.index.db.threadpool.connection.indexer-0] INFO  c.d.p.s.b.c.MeteringParameterStorageBackendTemplate - Initializing ledger metering end to LedgerMeteringEnd(Offset(Bytes()),2022-04-12T21:00:00Z), context: {participant: "sandbox"}
+2022-04-12 18:09:06,857 [canton-env-execution-context-29] INFO  c.d.p.i.p.InitializeParallelIngestion - Attempting to initialize with ledger ID sandbox and participant ID sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b, context: {participant: "sandbox"}
+2022-04-12 18:09:06,858 [daml.index.db.threadpool.connection.indexer-1] INFO  c.d.p.s.b.c.ParameterStorageBackendTemplate - Initializing new database for ledgerId 'sandbox' and participantId 'sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b', context: {participant: "sandbox"}
+2022-04-12 18:09:06,922 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,925 [canton-env-execution-context-31] INFO  c.d.p.indexer.RecoveringIndexer - Started Indexer Server, context: {participant: "sandbox"}
+2022-04-12 18:09:06,962 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,963 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,963 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,964 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,964 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,964 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,965 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,966 [canton-env-execution-context-31] INFO  com.zaxxer.hikari.HikariDataSource - daml.index.db.connection.api-server - Starting...
+2022-04-12 18:09:06,967 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,968 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,968 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,969 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,969 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,969 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,970 [daml.index.db.connection.indexer connection adder] INFO  c.d.p.s.b.c.InitHookDataSourceProxy - Init hook execution finished successfully, connection ready, context: {participant: "sandbox"}
+2022-04-12 18:09:06,970 [canton-env-execution-context-31] INFO  com.zaxxer.hikari.HikariDataSource - daml.index.db.connection.api-server - Start completed.
+2022-04-12 18:09:06,996 [input-mapping-pool-0] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Configuration change 'TimeModel config' from participant 'sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b' accepted with configuration: Configuration(1,LedgerTimeModel(PT0S,PT8760H,PT8760H),PT168H), context: {participant: "sandbox", offset: "000000000000000001", update: {configGeneration: 1, recordTime: "1970-01-01T00:00:00Z", submissionId: "TimeModel config", participantId: "sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b", maxDeduplicationDuration: "PT168H"}}
+2022-04-12 18:09:07,048 [daml.index.db.threadpool.connection.indexer-5] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000001"}
+2022-04-12 18:09:07,072 [canton-env-execution-context-26] INFO  c.d.p.index.ReadOnlyLedgerBuilder - Found existing ledger with ID: sandbox, context: {participant: "sandbox"}
+2022-04-12 18:09:07,150 [canton-env-execution-context-32] INFO  c.d.platform.apiserver.ApiServices - Daml-LF Engine supports LF versions: 1.14, context: {participant: "sandbox"}
+2022-04-12 18:09:07,164 [canton-env-execution-context-46] INFO  c.d.p.a.c.LedgerConfigurationSubscriptionFromIndex - Initial ledger configuration lookup found configuration Configuration(1,LedgerTimeModel(PT0S,PT8760H,PT8760H),PT168H) at Absolute(000000000000000001). Looking for new ledger configurations from this offset., context: {participant: "sandbox"}
+2022-04-12 18:09:07,347 [canton-env-execution-context-26] INFO  c.d.p.apiserver.LedgerApiServer - Listening on 127.0.0.1:6865 over plain text., context: {participant: "sandbox"}
+2022-04-12 18:09:07,350 [canton-env-execution-context-33] INFO  c.d.p.apiserver.StandaloneApiServer - Initialized API server version 2.0.0 with ledger-id = sandbox, port = 6865, dar file = List(), context: {participant: "sandbox"}
+2022-04-12 18:09:09,334 [input-mapping-pool-1] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Public package upload: 65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e, 57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66, cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a, 3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415, 86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb, f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78, 76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f, d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97, 40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7, e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b, 6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d, 518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c, 852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671, bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f, cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7, 057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba, d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662, c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd, 6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06, e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c, 8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb, 97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657, 733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a, 99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235, context: {participant: "sandbox", offset: "000000000000000002", update: {recordTime: "2022-04-12T22:09:09.257614Z", submissionId: "31d7e043-f44d-4ed0-886b-da013ea97de7", sourceDescription: "AdminWorkflows"}}
+2022-04-12 18:09:09,347 [daml.index.db.threadpool.connection.indexer-7] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000002"}
+2022-04-12 18:09:09,622 [canton-env-execution-context-31] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:5a714d40303d164991d70eed9016faac - Applied topology transaction Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    65921e553a35...,
+    57b5c520512c...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    852d8e3a8ccf...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) at 2022-04-12T22:09:09.621163Z
+2022-04-12 18:09:09,685 [canton-env-execution-context-33] INFO  c.d.p.a.s.ApiLedgerIdentityService - Received request for ledger identity: GetLedgerIdentityRequest(), context: {participant: "sandbox"}
+2022-04-12 18:09:09,792 [canton-env-execution-context-24] INFO  c.d.p.a.s.ApiCommandCompletionService - Received request for completion subscription 0: CompletionStreamRequest(Some(sandbox),admin-ping,Set(sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b),Some(Absolute(000000000000000002))), context: {participant: "sandbox", parties: ["sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"], offset: "000000000000000002"}
+2022-04-12 18:09:09,795 [canton-env-execution-context-33] INFO  c.d.p.a.s.ApiLedgerIdentityService - Received request for ledger identity: GetLedgerIdentityRequest(), context: {participant: "sandbox"}
+2022-04-12 18:09:09,815 [canton-env-execution-context-25] INFO  c.d.p.a.s.t.ApiTransactionService - Received request for transactions., context: {participant: "sandbox", startExclusive: "000000000000000002", endInclusive: null, filters: {sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b: "all-templates"}, verbose: false, ledgerId: "sandbox"}
+2022-04-12 18:09:09,816 [canton-env-execution-context-33] INFO  c.d.p.a.s.ApiCommandCompletionService - Received request for completion subscription 1: CompletionStreamRequest(Some(sandbox),admin-dar-distribution,Set(sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b),Some(Absolute(000000000000000002))), context: {participant: "sandbox", parties: ["sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"], offset: "000000000000000002"}
+2022-04-12 18:09:09,834 [canton-env-execution-context-25] INFO  c.d.p.a.s.t.ApiTransactionService - Received request for transactions., context: {participant: "sandbox", startExclusive: "000000000000000002", endInclusive: null, filters: {sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b: "all-templates"}, verbose: false, ledgerId: "sandbox"}
+2022-04-12 18:09:09,932 [canton-env-execution-context-29] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:6297aa963fa5546d9c7243b2eeb47eef - Applied topology transaction Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., SigningPublicKey(id = 12207db836e7..., format = Tink, scheme = Ed25519)) at 2022-04-12T22:09:09.931941Z
+2022-04-12 18:09:09,937 [canton-env-execution-context-31] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:6297aa963fa5546d9c7243b2eeb47eef - Applied topology transaction Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., EncryptionPublicKey(id = 122046f792d7..., format = Tink, scheme = ECIES-P256_HMAC256_AES128-GCM)) at 2022-04-12T22:09:09.936795Z
+2022-04-12 18:09:10,162 [canton-env-execution-context-23] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:6297aa963fa5546d9c7243b2eeb47eef - Applied topology transaction Add SignedLegalIdentityClaim(signature = Signature(signature = 306402301c4e..., signedBy = 12208a8f8245...), claim = ...) at 2022-04-12T22:09:10.161631Z
+2022-04-12 18:09:10,169 [canton-env-execution-context-46] INFO  c.d.c.p.s.CantonSyncService:participant=sandbox tid:5992abc8033a0cf3894d95d15da4f06a - Reconnecting to domains List(). Already connected: Set()
+2022-04-12 18:09:10,173 [canton-env-execution-context-46] INFO  c.d.c.p.s.CantonSyncService:participant=sandbox tid:5992abc8033a0cf3894d95d15da4f06a - Successfully re-connected to domains List()
+2022-04-12 18:09:10,176 [main] INFO  c.d.c.e.CommunityEnvironment - Auto-connecting local participants List(sandbox) to local domains List(local)
+2022-04-12 18:09:10,285 [canton-env-execution-context-24] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox - Applied topology transaction Add ParticipantState(To, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) at 2022-04-12T22:09:10.285457Z
+2022-04-12 18:09:10,388 [canton-env-execution-context-23] INFO  c.d.c.s.c.SequencerClient:participant=sandbox/domain=local - No event found up to 0001-01-01T00:00:00Z. Resubscribing from the beginning.
+2022-04-12 18:09:10,388 [canton-env-execution-context-23] INFO  c.d.c.s.c.SequencerClient:participant=sandbox/domain=local - Processing events from the SequencedEventStore from 0001-01-01T00:00:00.000001Z on
+2022-04-12 18:09:10,389 [canton-env-execution-context-32] INFO  c.d.c.s.c.SequencerClient:participant=sandbox/domain=local - Starting subscription at timestamp None; next counter 0
+2022-04-12 18:09:10,459 [canton-env-execution-context-32] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add NamespaceDelegation(1220d8b38701..., SigningPublicKey(id = 1220d8b38701..., format = Tink, scheme = Ed25519), true) at 2022-04-12T22:09:10.459131Z
+2022-04-12 18:09:10,464 [canton-env-execution-context-32] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    65921e553a35...,
+    57b5c520512c...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    852d8e3a8ccf...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) at 2022-04-12T22:09:10.463960Z
+2022-04-12 18:09:10,467 [canton-env-execution-context-82] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., SigningPublicKey(id = 12207db836e7..., format = Tink, scheme = Ed25519)) at 2022-04-12T22:09:10.466555Z
+2022-04-12 18:09:10,469 [canton-env-execution-context-31] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., EncryptionPublicKey(id = 122046f792d7..., format = Tink, scheme = ECIES-P256_HMAC256_AES128-GCM)) at 2022-04-12T22:09:10.468956Z
+2022-04-12 18:09:10,472 [canton-env-execution-context-82] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add SignedLegalIdentityClaim(signature = Signature(signature = 306402301c4e..., signedBy = 12208a8f8245...), claim = ...) at 2022-04-12T22:09:10.471402Z
+2022-04-12 18:09:10,474 [canton-env-execution-context-82] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add ParticipantState(To, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) at 2022-04-12T22:09:10.474027Z
+2022-04-12 18:09:10,489 [canton-env-execution-context-25] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:b105e1212cdd748530c652be0ce2325f - Storing topology transaction 1/1 Add NamespaceDelegation(1220d8b38701..., SigningPublicKey(id = 1220d8b38701..., format = Tink, scheme = Ed25519), true) with ts=EffectiveTime(2022-04-12T22:09:10.729485Z) (epsilon=250 ms)
+2022-04-12 18:09:10,489 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:b105e1212cdd748530c652be0ce2325f - Storing topology transaction 1/1 Add NamespaceDelegation(1220d8b38701..., SigningPublicKey(id = 1220d8b38701..., format = Tink, scheme = Ed25519), true) with ts=EffectiveTime(2022-04-12T22:09:10.729485Z) (epsilon=250 ms)
+2022-04-12 18:09:10,491 [canton-env-execution-context-82] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Setting participant PAR::sandbox::1220d8b38701... state to ParticipantAttributes(Submission,Ordinary)
+2022-04-12 18:09:10,492 [canton-env-execution-context-82] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add ParticipantState(From, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) at 2022-04-12T22:09:10.491508Z
+2022-04-12 18:09:10,510 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 1/5 Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    65921e553a35...,
+    57b5c520512c...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    852d8e3a8ccf...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,510 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 1/5 Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    65921e553a35...,
+    57b5c520512c...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    852d8e3a8ccf...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,511 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 2/5 Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., SigningPublicKey(id = 12207db836e7..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,511 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 3/5 Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., EncryptionPublicKey(id = 122046f792d7..., format = Tink, scheme = ECIES-P256_HMAC256_AES128-GCM)) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,511 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 2/5 Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., SigningPublicKey(id = 12207db836e7..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,512 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 4/5 Add SignedLegalIdentityClaim(signature = Signature(signature = 306402301c4e..., signedBy = 12208a8f8245...), claim = ...) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,512 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 5/5 Add ParticipantState(To, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,513 [canton-env-execution-context-32] INFO  c.d.c.d.t.ParticipantTopologyCatchup:domain=local/identity tid:383de2f69159db1dd04945d3a816f7b6 - Participant PAR::sandbox::1220d8b38701... is changing from Disabled to Submission, requires to catch up 12
+2022-04-12 18:09:10,513 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 3/5 Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., EncryptionPublicKey(id = 122046f792d7..., format = Tink, scheme = ECIES-P256_HMAC256_AES128-GCM)) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,514 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 4/5 Add SignedLegalIdentityClaim(signature = Signature(signature = 306402301c4e..., signedBy = 12208a8f8245...), claim = ...) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,514 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:9228b847e3700fcf81cbd7ac8e5bfe9f - Storing topology transaction 5/5 Add ParticipantState(To, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) with ts=EffectiveTime(2022-04-12T22:09:10.746259Z) (epsilon=250 ms)
+2022-04-12 18:09:10,542 [canton-env-execution-context-32] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 1/1 Add ParticipantState(From, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) with ts=EffectiveTime(2022-04-12T22:09:10.782453Z) (epsilon=250 ms)
+2022-04-12 18:09:10,542 [canton-env-execution-context-25] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 1/1 Add ParticipantState(From, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) with ts=EffectiveTime(2022-04-12T22:09:10.782453Z) (epsilon=250 ms)
+2022-04-12 18:09:10,836 [canton-env-execution-context-82] INFO  c.d.c.s.c.t.GrpcSequencerSubscription:participant=sandbox/domain=local - GRPC subscription successfully closed due to client shutdown.
+2022-04-12 18:09:10,837 [canton-env-execution-context-25] INFO  c.d.c.n.g.ApiRequestLogger:domain=local tid:5a54110e8e118574a737b8fd4bba7d20 - Request c.d.c.d.a.v.SequencerService/SubscribeUnauthenticated by /127.0.0.1:54753: cancelled
+2022-04-12 18:09:10,873 [canton-env-execution-context-24] INFO  c.d.c.p.s.SyncDomainEphemeralStateFactoryImpl:participant=sandbox - Computed starting points: ProcessingStartingPoints(
+  clean replay = MessageProcessingStartingPoint(next request counter = 0, next sequencer counter = 0, prenext timestamp = 0001-01-01T00:00:00Z),
+  processing = MessageProcessingStartingPoint(next request counter = 0, next sequencer counter = 0, prenext timestamp = 0001-01-01T00:00:00Z),
+  event publishing next local offset = 0,
+  rewound sequencer counter prehead = None()
+)
+2022-04-12 18:09:10,873 [canton-env-execution-context-24] INFO  c.d.c.s.m.InMemoryCursorPreheadStore:participant=sandbox/domain-alias=local - Rewinding prehead to None
+2022-04-12 18:09:11,003 [canton-env-execution-context-26] INFO  c.d.c.p.p.AcsCommitmentProcessor:participant=sandbox/domain=local - Deriving 8 as number of threads from 'sys.runtime.availableProcessors()'. Please use '-Dscala.concurrent.context.numThreads' to override.
+2022-04-12 18:09:11,003 [canton-env-execution-context-26] INFO  c.d.c.p.p.AcsCommitmentProcessor:participant=sandbox/domain=local - Will use parallelism 8 when computing ACs commitments
+2022-04-12 18:09:11,007 [canton-env-execution-context-25] INFO  c.d.c.p.p.AcsCommitmentProcessor:participant=sandbox/domain=local - Initialized from stored snapshot at RecordTime(timestamp = 0001-01-01T00:00:00Z, tieBreaker = -9223372036854775808) (might be incomplete)
+2022-04-12 18:09:11,008 [canton-env-execution-context-25] INFO  c.d.c.p.p.AcsCommitmentProcessor:participant=sandbox/domain=local - Initialized the ACS commitment processor queue
+2022-04-12 18:09:11,016 [canton-env-execution-context-26] INFO  c.d.c.p.s.CantonSyncService:participant=sandbox - Connected to domain and starting synchronisation: Domain 'local'
+2022-04-12 18:09:11,019 [canton-env-execution-context-31] INFO  c.d.c.p.s.SyncDomain:participant=sandbox/domain=local - Publishing pending events up to -1
+2022-04-12 18:09:11,032 [canton-env-execution-context-24] INFO  c.d.c.p.s.SyncDomain:participant=sandbox/domain=local - Found 0 repair requests at request counters Seq()
+2022-04-12 18:09:11,035 [canton-env-execution-context-82] INFO  c.d.c.s.c.SequencerClient:participant=sandbox/domain=local - No event found up to 0001-01-01T00:00:00Z. Resubscribing from the beginning.
+2022-04-12 18:09:11,036 [canton-env-execution-context-82] INFO  c.d.c.s.c.SequencerClient:participant=sandbox/domain=local - Processing events from the SequencedEventStore from 0001-01-01T00:00:00.000001Z on
+2022-04-12 18:09:11,036 [canton-env-execution-context-26] INFO  c.d.c.s.c.SequencerClient:participant=sandbox/domain=local - Starting subscription at timestamp None; next counter 0
+2022-04-12 18:09:11,062 [canton-env-execution-context-24] INFO  c.d.c.p.s.SyncDomain:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Caught up with batch with counter=0 with sequencer with 542 ms delay
+2022-04-12 18:09:11,063 [canton-env-execution-context-24] INFO  c.d.c.p.s.SyncDomain$EventProcessingMonitor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Replaying requests 0 up to clean prehead -1
+2022-04-12 18:09:11,063 [canton-env-execution-context-24] INFO  c.d.c.p.s.SyncDomain$EventProcessingMonitor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Replaying or processing locally stored events with sequencer counters 0 to -1
+2022-04-12 18:09:11,089 [canton-env-execution-context-26] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Updated topology change delay from=0s to 0.25s
+2022-04-12 18:09:11,090 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 1/12 Add NamespaceDelegation(12205b86602e..., SigningPublicKey(id = 12205b86602e..., format = Tink, scheme = Ed25519), true) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,090 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 2/12 Add OwnerToKeyMapping(DOM::local::12205b86602e..., SigningPublicKey(id = 1220928da3fe..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,090 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 3/12 Add OwnerToKeyMapping(MED::local::12205b86602e..., SigningPublicKey(id = 12208c685596..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,091 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 4/12 Add MediatorDomainState(Both, local::12205b86602e..., MED::local::12205b86602e...) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,091 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 5/12 Add OwnerToKeyMapping(SEQ::local::12205b86602e..., SigningPublicKey(id = 12204f49e2f5..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,092 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 6/12 Add NamespaceDelegation(1220d8b38701..., SigningPublicKey(id = 1220d8b38701..., format = Tink, scheme = Ed25519), true) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,092 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 7/12 Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    65921e553a35...,
+    57b5c520512c...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    852d8e3a8ccf...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,093 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 8/12 Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., SigningPublicKey(id = 12207db836e7..., format = Tink, scheme = Ed25519)) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,093 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 9/12 Add OwnerToKeyMapping(PAR::sandbox::1220d8b38701..., EncryptionPublicKey(id = 122046f792d7..., format = Tink, scheme = ECIES-P256_HMAC256_AES128-GCM)) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,094 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 10/12 Add SignedLegalIdentityClaim(signature = Signature(signature = 306402301c4e..., signedBy = 12208a8f8245...), claim = ...) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,095 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 11/12 Add ParticipantState(To, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,095 [canton-env-execution-context-82] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 12/12 Replace DomainParametersChange(local::12205b86602e..., DynamicDomainParameters(30s, 30s, 1m, 0.25s, 1m)) with ts=EffectiveTime(2022-04-12T22:09:10.520659Z) (epsilon=0 ms)
+2022-04-12 18:09:11,123 [input-mapping-pool-2] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Add party 'sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b' to participant, context: {participant: "sandbox", offset: "000000000000000003", update: {displayName: "", recordTime: "2022-04-12T22:09:11.110601Z", submissionId: "58aafe82-de62-4e26-b637-68f03c15b2e6", participantId: "sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b", party: "sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"}}
+2022-04-12 18:09:11,129 [daml.index.db.threadpool.connection.indexer-9] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000003"}
+2022-04-12 18:09:11,145 [canton-env-execution-context-83] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:383de2f69159db1dd04945d3a816f7b6 - Storing topology transaction 1/1 Add ParticipantState(From, local::12205b86602e..., PAR::sandbox::1220d8b38701..., Submission, Ordinary) with ts=EffectiveTime(2022-04-12T22:09:10.782453Z) (epsilon=250 ms)
+2022-04-12 18:09:11,145 [canton-env-execution-context-23] INFO  c.d.c.p.t.c.MissingKeysAlerter:participant=sandbox tid:383de2f69159db1dd04945d3a816f7b6 - Domain local::12205b86602e... update my participant permission as of 2022-04-12T22:09:10.782453Z to Submission, Ordinary
+2022-04-12 18:09:11,454 [main] INFO  c.d.c.e.CommunityEnvironment tid:5992abc8033a0cf3894d95d15da4f06a - Successfully started all nodes
+2022-04-12 18:09:11,456 [main] INFO  c.digitalasset.canton.ServerRunner - Canton started
+2022-04-12 18:09:11,561 [canton-env-execution-context-26] INFO  c.d.p.a.s.a.ApiPackageManagementService - Uploading DAR file, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,104 [input-mapping-pool-3] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Public package upload: 3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df, b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618, cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a, 3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415, 86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb, f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78, 76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f, 38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7, d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97, 40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7, e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b, 6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d, 518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c, 37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c, 1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c, bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f, cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7, 057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba, d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662, c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd, 6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06, e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c, 8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb, 97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657, 733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a, 99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235, context: {participant: "sandbox", offset: "000000000000000004", update: {recordTime: "2022-04-12T22:09:12.044665Z", submissionId: "-a74011aa-242c-416a-a98d-1e55e393cdd3", sourceDescription: ""}}
+2022-04-12 18:09:12,112 [daml.index.db.threadpool.connection.indexer-11] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000004"}
+2022-04-12 18:09:12,187 [canton-env-execution-context-33] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:40a0c9c5e972b5a5a321fb49ad1d63fc - Applied topology transaction Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    3ab785a3ff20...,
+    b76c39513d2b...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    38e6274601b2...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    37659115dc2e...,
+    1041d7154af4...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) at 2022-04-12T22:09:12.186464Z
+2022-04-12 18:09:12,205 [canton-env-execution-context-32] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    3ab785a3ff20...,
+    b76c39513d2b...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    38e6274601b2...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    37659115dc2e...,
+    1041d7154af4...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) at 2022-04-12T22:09:12.205466Z
+2022-04-12 18:09:12,206 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,206 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,206 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,206 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,206 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,207 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,208 [canton-env-execution-context-23] INFO  c.d.p.a.s.a.ApiPackageManagementService - Package 99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235 successfully uploaded, context: {participant: "sandbox", submissionId: ""}
+2022-04-12 18:09:12,227 [canton-env-execution-context-23] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:ceabe7eb7ee09eae1077d409076d8ff2 - Storing topology transaction 1/1 Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    3ab785a3ff20...,
+    b76c39513d2b...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    38e6274601b2...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    37659115dc2e...,
+    1041d7154af4...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) with ts=EffectiveTime(2022-04-12T22:09:12.462944Z) (epsilon=250 ms)
+2022-04-12 18:09:12,227 [canton-env-execution-context-46] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:ceabe7eb7ee09eae1077d409076d8ff2 - Storing topology transaction 1/1 Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    3ab785a3ff20...,
+    b76c39513d2b...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    38e6274601b2...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    37659115dc2e...,
+    1041d7154af4...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) with ts=EffectiveTime(2022-04-12T22:09:12.462944Z) (epsilon=250 ms)
+2022-04-12 18:09:12,237 [canton-env-execution-context-23] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:ceabe7eb7ee09eae1077d409076d8ff2 - Storing topology transaction 1/1 Add VettedPackages(
+  participant = sandbox::1220d8b38701...,
+  packages = Seq(
+    3ab785a3ff20...,
+    b76c39513d2b...,
+    cb0552debf21...,
+    3f4deaf145a1...,
+    86828b984346...,
+    f20de1e4e37b...,
+    76bf0fd12bd9...,
+    38e6274601b2...,
+    d58cf9939847...,
+    40f452260bef...,
+    e491352788e5...,
+    6839a6d3d430...,
+    518032f41fd0...,
+    37659115dc2e...,
+    1041d7154af4...,
+    bfcd37bd6b84...,
+    cc348d369011...,
+    057eed1fd48c...,
+    d14e08374fc7...,
+    c1f1f0055879...,
+    6c2c0667393c...,
+    e22bce619ae2...,
+    8a7806365bbd...,
+    97b883cd8a2b...,
+    733e38d36a27...,
+    99a2705ed38c...
+  )
+) with ts=EffectiveTime(2022-04-12T22:09:12.462944Z) (epsilon=250 ms)
+2022-04-12 18:09:14,915 [canton-env-execution-context-83] INFO  c.d.p.a.s.ApiLedgerIdentityService - Received request for ledger identity: GetLedgerIdentityRequest(), context: {participant: "sandbox"}
+2022-04-12 18:09:16,260 [canton-env-execution-context-32] INFO  c.d.p.a.s.a.ApiPartyManagementService - Allocating party, context: {participant: "sandbox", parties: [""]}
+2022-04-12 18:09:16,270 [canton-env-execution-context-32] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:c245eb5d29415589daf4248abe4d2336 - Applied topology transaction Add PartyToParticipant(Both, party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) at 2022-04-12T22:09:16.270081Z
+2022-04-12 18:09:16,294 [canton-env-execution-context-32] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add PartyToParticipant(Both, party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) at 2022-04-12T22:09:16.294125Z
+2022-04-12 18:09:16,315 [canton-env-execution-context-33] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:74f2d6d0f68466f25e401081389996e6 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:16.553044Z) (epsilon=250 ms)
+2022-04-12 18:09:16,325 [canton-env-execution-context-31] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:74f2d6d0f68466f25e401081389996e6 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:16.553044Z) (epsilon=250 ms)
+2022-04-12 18:09:16,338 [canton-env-execution-context-26] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:74f2d6d0f68466f25e401081389996e6 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:16.553044Z) (epsilon=250 ms)
+2022-04-12 18:09:16,656 [input-mapping-pool-4] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Add party 'party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b' to participant, context: {participant: "sandbox", offset: "000000000000000005", update: {displayName: "Alice", recordTime: "2022-04-12T22:09:16.592330Z", submissionId: "8a18d8ae-bddf-4b34-a1b8-7b91defd11a8", participantId: "sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b", party: "party-3c3c09aa-4bbf-4e8d-b759-0e6434e19565::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"}}
+2022-04-12 18:09:16,660 [daml.index.db.threadpool.connection.indexer-13] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000005"}
+2022-04-12 18:09:16,721 [canton-env-execution-context-83] INFO  c.d.p.a.s.a.ApiPartyManagementService - Allocating party, context: {participant: "sandbox", parties: [""]}
+2022-04-12 18:09:16,724 [canton-env-execution-context-83] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:5eac17bfe19cc9bf1029fd7c04c22570 - Applied topology transaction Add PartyToParticipant(Both, party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) at 2022-04-12T22:09:16.724725Z
+2022-04-12 18:09:16,737 [canton-env-execution-context-32] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add PartyToParticipant(Both, party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) at 2022-04-12T22:09:16.737503Z
+2022-04-12 18:09:16,752 [canton-env-execution-context-32] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:12efdff9569df634e741f29a252ff799 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:16.992719Z) (epsilon=250 ms)
+2022-04-12 18:09:16,755 [canton-env-execution-context-26] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:12efdff9569df634e741f29a252ff799 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:16.992719Z) (epsilon=250 ms)
+2022-04-12 18:09:16,755 [canton-env-execution-context-29] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:12efdff9569df634e741f29a252ff799 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:16.992719Z) (epsilon=250 ms)
+2022-04-12 18:09:17,074 [input-mapping-pool-5] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Add party 'party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b' to participant, context: {participant: "sandbox", offset: "000000000000000006", update: {displayName: "Bank", recordTime: "2022-04-12T22:09:17.008131Z", submissionId: "bd68fb06-7eaa-41f9-b6c7-4cd1056f7fd0", participantId: "sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b", party: "party-f1afbbb2-f9d0-477c-b7bb-c737fbd0b090::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"}}
+2022-04-12 18:09:17,078 [daml.index.db.threadpool.connection.indexer-15] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000006"}
+2022-04-12 18:09:17,192 [canton-env-execution-context-25] INFO  c.d.p.a.s.a.ApiPartyManagementService - Allocating party, context: {participant: "sandbox", parties: [""]}
+2022-04-12 18:09:17,195 [canton-env-execution-context-82] INFO  c.d.c.p.t.ParticipantTopologyManager:participant=sandbox tid:4a8727be4b0ddee0b06fb6fee15de829 - Applied topology transaction Add PartyToParticipant(Both, party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) at 2022-04-12T22:09:17.195413Z
+2022-04-12 18:09:17,209 [canton-env-execution-context-26] INFO  c.d.c.d.t.DomainTopologyManager:domain=local - Applied topology transaction Add PartyToParticipant(Both, party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) at 2022-04-12T22:09:17.209231Z
+2022-04-12 18:09:17,225 [canton-env-execution-context-29] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local tid:e373209c46e622cc2b7ac7c9317bf001 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:17.468241Z) (epsilon=250 ms)
+2022-04-12 18:09:17,226 [canton-env-execution-context-33] INFO  c.d.c.t.p.TopologyTransactionProcessor:domain=local/node=mediator tid:e373209c46e622cc2b7ac7c9317bf001 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:17.468241Z) (epsilon=250 ms)
+2022-04-12 18:09:17,228 [canton-env-execution-context-24] INFO  c.d.c.t.p.TopologyTransactionProcessor:participant=sandbox/domain=local tid:e373209c46e622cc2b7ac7c9317bf001 - Storing topology transaction 1/1 Add PartyToParticipant(Both, party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701..., PAR::sandbox::1220d8b38701..., Submission) with ts=EffectiveTime(2022-04-12T22:09:17.468241Z) (epsilon=250 ms)
+2022-04-12 18:09:17,495 [input-mapping-pool-6] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Add party 'party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b' to participant, context: {participant: "sandbox", offset: "000000000000000007", update: {displayName: "Jay", recordTime: "2022-04-12T22:09:17.483375Z", submissionId: "667279e4-9374-44c1-9904-56319c362934", participantId: "sandbox::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b", party: "party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"}}
+2022-04-12 18:09:17,498 [daml.index.db.threadpool.connection.indexer-0] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000007"}
+2022-04-12 18:09:17,684 [canton-env-execution-context-83] INFO  c.d.p.a.s.tracking.TrackerMap - Registered a tracker for submitter Key(daml-script,Set(party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b))., context: {participant: "sandbox"}
+2022-04-12 18:09:17,686 [canton-env-execution-context-32] INFO  c.d.p.a.s.ApiCommandCompletionService - Received request for completion subscription 2: CompletionStreamRequest(Some(sandbox),daml-script,Set(party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b),Some(Absolute(000000000000000007))), context: {participant: "sandbox", parties: ["party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"], offset: "000000000000000007"}
+2022-04-12 18:09:17,701 [canton-env-execution-context-24] INFO  c.d.p.a.s.ApiSubmissionService - Submitting transaction, context: {participant: "sandbox", commands: {readAs: [], deduplicationPeriod: {duration: "PT168H"}, submittedAt: "2022-04-12T22:09:17.697654Z", ledgerId: "sandbox", applicationId: "daml-script", actAs: ["party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"], commandId: "86e276a0-ad58-42e0-9cf1-7ea78afd8f5a", workflowId: null}}
+2022-04-12 18:09:18,499 [canton-env-execution-context-29] INFO  c.d.c.p.s.DomainRouter:participant=sandbox tid:78a01eb2559418a1f7791cd003e7feba - Submitting transaction to domain local::12205b86602e... (commandId=86e276a0-ad58-42e0-9cf1-7ea78afd8f5a)...
+2022-04-12 18:09:18,823 [canton-env-execution-context-23] INFO  c.d.c.p.p.TransactionProcessor:participant=sandbox/domain=local tid:78a01eb2559418a1f7791cd003e7feba - Processing Transaction request at RequestId(2022-04-12T22:09:18.794473Z).
+2022-04-12 18:09:19,151 [canton-env-execution-context-23] INFO  c.d.c.p.p.TransactionProcessor:participant=sandbox/domain=local tid:78a01eb2559418a1f7791cd003e7feba - Finalizing Transaction request at RequestId(2022-04-12T22:09:18.794473Z) with event Some(
+  TransactionAccepted(
+    recordTime = 2022-04-12T22:09:18.794473Z,
+    transactionId = 1220f3d020e17665d3c15e77f36ddac5abc2594107e76fa2f401641e8742e2f1a607,
+    completion info = CompletionInfo(
+      actAs = party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701...,
+      commandId = 86e276a0-ad58-42e0-9cf1-7ea78afd8f5a,
+      applicationId = daml-script,
+      deduplication period = DeduplicationOffset(offset=Offset(Bytes(000000000000000001)),
+      submissionId = Some(49e67111-e353-46e8-9529-8e75780a602a)
+    ),
+    transactionMeta = TransactionMeta(ledgerEffectiveTime = 2022-04-12T22:09:17.697648Z, submissionTime = 2022-04-12T22:09:17.697648Z, ...),
+    transaction = ...,
+    divulgedContracts = ...,
+    blindingInfo = ...
+  )
+).
+2022-04-12 18:09:19,178 [input-mapping-pool-7] INFO  c.d.p.i.p.ParallelIndexerSubscription - Storing Accept transaction 1220f3d020e17665d3c15e77f36ddac5abc2594107e76fa2f401641e8742e2f1a607, context: {participant: "sandbox", offset: "000000000000000008", update: {submissionTime: "2022-04-12T22:09:17.697648Z", recordTime: "2022-04-12T22:09:18.794473Z", completion: {actAs : ["party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"], commandId : "86e276a0-ad58-42e0-9cf1-7ea78afd8f5a", submissionId: "49e67111-e353-46e8-9529-8e75780a602a", deduplicationPeriod : {offset: "000000000000000001"}, applicationId : "daml-script"}, workflowId: null, transactionId: "1220f3d020e17665d3c15e77f36ddac5abc2594107e76fa2f401641e8742e2f1a607", ledgerTime: "2022-04-12T22:09:17.697648Z"}}
+2022-04-12 18:09:19,198 [daml.index.db.threadpool.connection.indexer-2] INFO  c.d.p.i.p.ParallelIndexerSubscription - Ledger end updated, context: {participant: "sandbox", updateOffset: "000000000000000008"}
+2022-04-12 18:09:19,202 [canton-env-execution-context-23] INFO  c.d.c.p.p.AcsCommitmentProcessor:participant=sandbox/domain=local tid:78a01eb2559418a1f7791cd003e7feba - Deleted buffered commitments and set last computed and sent timestamp set to 2022-04-12T22:09:00Z
+2022-04-12 18:09:19,314 [canton-env-execution-context-33] INFO  c.d.p.a.s.t.ApiTransactionService - Received request for transaction by ID., context: {participant: "sandbox", ledgerId: "sandbox", transactionId: "1220f3d020e17665d3c15e77f36ddac5abc2594107e76fa2f401641e8742e2f1a607", parties: ["party-6fdd5ded-2ffc-4c9f-ba8b-85a19af46f63::1220d8b38701754fcba308fb17b936fe6708b27b9d3a430649ddf2e703bc96b3f95b"]}
+2022-04-12 18:09:23,385 [canton-env-execution-context-25] INFO  c.d.p.a.s.ApiLedgerIdentityService - Received request for ledger identity: GetLedgerIdentityRequest(), context: {participant: "sandbox"}
+2022-04-12 18:09:25,916 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request to list packages: ListPackagesRequest(sandbox), context: {participant: "sandbox"}
+2022-04-12 18:09:25,929 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request to list packages: ListPackagesRequest(sandbox), context: {participant: "sandbox"}
+2022-04-12 18:09:25,935 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb), context: {participant: "sandbox", packageId: "86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb"}
+2022-04-12 18:09:25,946 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7), context: {participant: "sandbox", packageId: "cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7"}
+2022-04-12 18:09:25,948 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df), context: {participant: "sandbox", packageId: "3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df"}
+2022-04-12 18:09:25,949 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d), context: {participant: "sandbox", packageId: "6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d"}
+2022-04-12 18:09:25,968 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235), context: {participant: "sandbox", packageId: "99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235"}
+2022-04-12 18:09:25,968 [canton-env-execution-context-23] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd), context: {participant: "sandbox", packageId: "c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd"}
+2022-04-12 18:09:25,968 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb), context: {participant: "sandbox", packageId: "86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb"}
+2022-04-12 18:09:25,969 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7), context: {participant: "sandbox", packageId: "cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7"}
+2022-04-12 18:09:25,969 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df), context: {participant: "sandbox", packageId: "3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df"}
+2022-04-12 18:09:25,969 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415), context: {participant: "sandbox", packageId: "3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415"}
+2022-04-12 18:09:25,969 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d), context: {participant: "sandbox", packageId: "6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d"}
+2022-04-12 18:09:25,970 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c), context: {participant: "sandbox", packageId: "37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c"}
+2022-04-12 18:09:25,970 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235), context: {participant: "sandbox", packageId: "99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235"}
+2022-04-12 18:09:25,971 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f), context: {participant: "sandbox", packageId: "bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f"}
+2022-04-12 18:09:25,971 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c), context: {participant: "sandbox", packageId: "e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c"}
+2022-04-12 18:09:25,971 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb), context: {participant: "sandbox", packageId: "8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb"}
+2022-04-12 18:09:25,972 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c), context: {participant: "sandbox", packageId: "518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c"}
+2022-04-12 18:09:25,972 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd), context: {participant: "sandbox", packageId: "c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd"}
+2022-04-12 18:09:25,973 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a), context: {participant: "sandbox", packageId: "cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a"}
+2022-04-12 18:09:25,973 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a), context: {participant: "sandbox", packageId: "733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a"}
+2022-04-12 18:09:25,973 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f), context: {participant: "sandbox", packageId: "76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f"}
+2022-04-12 18:09:25,974 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e), context: {participant: "sandbox", packageId: "65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e"}
+2022-04-12 18:09:25,974 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671), context: {participant: "sandbox", packageId: "852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671"}
+2022-04-12 18:09:25,974 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78), context: {participant: "sandbox", packageId: "f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78"}
+2022-04-12 18:09:25,975 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97), context: {participant: "sandbox", packageId: "d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97"}
+2022-04-12 18:09:25,975 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415), context: {participant: "sandbox", packageId: "3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415"}
+2022-04-12 18:09:25,975 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618), context: {participant: "sandbox", packageId: "b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618"}
+2022-04-12 18:09:25,975 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c), context: {participant: "sandbox", packageId: "37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c"}
+2022-04-12 18:09:25,976 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06), context: {participant: "sandbox", packageId: "6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06"}
+2022-04-12 18:09:25,977 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f), context: {participant: "sandbox", packageId: "bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f"}
+2022-04-12 18:09:25,977 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c), context: {participant: "sandbox", packageId: "1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c"}
+2022-04-12 18:09:25,977 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66), context: {participant: "sandbox", packageId: "57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66"}
+2022-04-12 18:09:25,978 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662), context: {participant: "sandbox", packageId: "d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662"}
+2022-04-12 18:09:25,978 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7), context: {participant: "sandbox", packageId: "38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7"}
+2022-04-12 18:09:25,978 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b), context: {participant: "sandbox", packageId: "e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b"}
+2022-04-12 18:09:25,979 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7), context: {participant: "sandbox", packageId: "40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7"}
+2022-04-12 18:09:25,979 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657), context: {participant: "sandbox", packageId: "97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657"}
+2022-04-12 18:09:25,980 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb), context: {participant: "sandbox", packageId: "8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb"}
+2022-04-12 18:09:25,980 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c), context: {participant: "sandbox", packageId: "518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c"}
+2022-04-12 18:09:25,968 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c), context: {participant: "sandbox", packageId: "e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c"}
+2022-04-12 18:09:25,981 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a), context: {participant: "sandbox", packageId: "cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a"}
+2022-04-12 18:09:25,981 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f), context: {participant: "sandbox", packageId: "76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f"}
+2022-04-12 18:09:25,981 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97), context: {participant: "sandbox", packageId: "d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97"}
+2022-04-12 18:09:25,981 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06), context: {participant: "sandbox", packageId: "6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06"}
+2022-04-12 18:09:25,982 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618), context: {participant: "sandbox", packageId: "b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618"}
+2022-04-12 18:09:25,982 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c), context: {participant: "sandbox", packageId: "1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c"}
+2022-04-12 18:09:25,983 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662), context: {participant: "sandbox", packageId: "d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662"}
+2022-04-12 18:09:25,983 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba), context: {participant: "sandbox", packageId: "057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba"}
+2022-04-12 18:09:25,983 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7), context: {participant: "sandbox", packageId: "38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7"}
+2022-04-12 18:09:25,983 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b), context: {participant: "sandbox", packageId: "e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b"}
+2022-04-12 18:09:25,971 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66), context: {participant: "sandbox", packageId: "57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66"}
+2022-04-12 18:09:26,140 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba), context: {participant: "sandbox", packageId: "057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba"}
+2022-04-12 18:09:26,140 [canton-env-execution-context-23] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e), context: {participant: "sandbox", packageId: "65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e"}
+2022-04-12 18:09:26,140 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78), context: {participant: "sandbox", packageId: "f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78"}
+2022-04-12 18:09:26,140 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7), context: {participant: "sandbox", packageId: "40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7"}
+2022-04-12 18:09:26,149 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657), context: {participant: "sandbox", packageId: "97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657"}
+2022-04-12 18:09:26,168 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671), context: {participant: "sandbox", packageId: "852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671"}
+2022-04-12 18:09:26,140 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a), context: {participant: "sandbox", packageId: "733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a"}
+2022-04-12 18:09:26,177 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request to list packages: ListPackagesRequest(sandbox), context: {participant: "sandbox"}
+2022-04-12 18:09:26,297 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd), context: {participant: "sandbox", packageId: "c1f1f00558799eec139fb4f4c76f95fb52fa1837a5dd29600baa1c8ed1bdccfd"}
+2022-04-12 18:09:26,297 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb), context: {participant: "sandbox", packageId: "86828b9843465f419db1ef8a8ee741d1eef645df02375ebf509cdc8c3ddd16cb"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d), context: {participant: "sandbox", packageId: "6839a6d3d430c569b2425e9391717b44ca324b88ba621d597778811b2d05031d"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e), context: {participant: "sandbox", packageId: "65921e553a353588e950cbc87e98a127730e63295f7ad8d3adae952ef0133b3e"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-23] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df), context: {participant: "sandbox", packageId: "3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235), context: {participant: "sandbox", packageId: "99a2705ed38c1c26cbb8fe7acf36bbf626668e167a33335de932599219e0a235"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7), context: {participant: "sandbox", packageId: "cc348d369011362a5190fe96dd1f0dfbc697fdfd10e382b9e9666f0da05961b7"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb), context: {participant: "sandbox", packageId: "8a7806365bbd98d88b4c13832ebfa305f6abaeaf32cfa2b7dd25c4fa489b79fb"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66), context: {participant: "sandbox", packageId: "57b5c520512c24035057aa4c783cb7ac7f3f49db29806280962e188be7aadb66"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a), context: {participant: "sandbox", packageId: "733e38d36a2759688a4b2c4cec69d48e7b55ecc8dedc8067b815926c917a182a"}
+2022-04-12 18:09:26,343 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78), context: {participant: "sandbox", packageId: "f20de1e4e37b92280264c08bf15eca0be0bc5babd7a7b5e574997f154c00cb78"}
+2022-04-12 18:09:26,298 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c), context: {participant: "sandbox", packageId: "e22bce619ae24ca3b8e6519281cb5a33b64b3190cc763248b4c3f9ad5087a92c"}
+2022-04-12 18:09:26,344 [canton-env-execution-context-23] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c), context: {participant: "sandbox", packageId: "37659115dc2ebf3c8975e7f683c1bf6b8d98b54ce3185a198cdd6a36eae76d0c"}
+2022-04-12 18:09:26,344 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f), context: {participant: "sandbox", packageId: "bfcd37bd6b84768e86e432f5f6c33e25d9e7724a9d42e33875ff74f6348e733f"}
+2022-04-12 18:09:26,343 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415), context: {participant: "sandbox", packageId: "3f4deaf145a15cdcfa762c058005e2edb9baa75bb7f95a4f8f6f937378e86415"}
+2022-04-12 18:09:26,344 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c), context: {participant: "sandbox", packageId: "518032f41fd0175461b35ae0c9691e08b4aea55e62915f8360af2cc7a1f2ba6c"}
+2022-04-12 18:09:26,352 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f), context: {participant: "sandbox", packageId: "76bf0fd12bd945762a01f8fc5bbcdfa4d0ff20f8762af490f8f41d6237c6524f"}
+2022-04-12 18:09:26,354 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618), context: {participant: "sandbox", packageId: "b76c39513d2b3214a4c507c55c719e36a35b88a33be9d36b884dda147c8e6618"}
+2022-04-12 18:09:26,354 [canton-env-execution-context-23] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c), context: {participant: "sandbox", packageId: "1041d7154af4316a5dfda1494bb260a54286b720adfd847549ff32694785580c"}
+2022-04-12 18:09:26,354 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7), context: {participant: "sandbox", packageId: "38e6274601b21d7202bb995bc5ec147decda5a01b68d57dda422425038772af7"}
+2022-04-12 18:09:26,353 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662), context: {participant: "sandbox", packageId: "d14e08374fc7197d6a0de468c968ae8ba3aadbf9315476fd39071831f5923662"}
+2022-04-12 18:09:26,355 [canton-env-execution-context-46] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657), context: {participant: "sandbox", packageId: "97b883cd8a2b7f49f90d5d39c981cf6e110cf1f1c64427a28a6d58ec88c43657"}
+2022-04-12 18:09:26,353 [canton-env-execution-context-25] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba), context: {participant: "sandbox", packageId: "057eed1fd48c238491b8ea06b9b5bf85a5d4c9275dd3f6183e0e6b01730cc2ba"}
+2022-04-12 18:09:26,353 [canton-env-execution-context-83] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a), context: {participant: "sandbox", packageId: "cb0552debf219cc909f51cbb5c3b41e9981d39f8f645b1f35e2ef5be2e0b858a"}
+2022-04-12 18:09:26,354 [canton-env-execution-context-23] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7), context: {participant: "sandbox", packageId: "40f452260bef3f29dede136108fc08a88d5a5250310281067087da6f0baddff7"}
+2022-04-12 18:09:26,357 [canton-env-execution-context-33] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b), context: {participant: "sandbox", packageId: "e491352788e56ca4603acc411ffe1a49fefd76ed8b163af86cf5ee5f4c38645b"}
+2022-04-12 18:09:26,354 [canton-env-execution-context-82] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97), context: {participant: "sandbox", packageId: "d58cf9939847921b2aab78eaa7b427dc4c649d25e6bee3c749ace4c3f52f5c97"}
+2022-04-12 18:09:26,354 [canton-env-execution-context-29] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671), context: {participant: "sandbox", packageId: "852d8e3a8ccf952acc73e17522846bc1eb41498e840d637e519ddcca7dbc7671"}
+2022-04-12 18:09:26,357 [canton-env-execution-context-32] INFO  c.d.p.a.services.ApiPackageService - Received request for a package: GetPackageRequest(sandbox,6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06), context: {participant: "sandbox", packageId: "6c2c0667393c5f92f1885163068cd31800d2264eb088eb6fc740e11241b2bf06"}
+2022-04-12 18:09:30,067 [canton-env-execution-context-33] INFO  c.d.p.a.s.ApiCommandCompletionService - Received request for completion subscription 3: CompletionStreamRequest(Some(sandbox),Navigator-078666ce-2781-4ab7-8a1d-45980e0bce24#5c13f272ffc6c23a,Set(Bank),Some(Absolute(000000000000000008))), context: {participant: "sandbox", parties: ["Bank"], offset: "000000000000000008"}
+2022-04-12 18:09:30,067 [canton-env-execution-context-46] INFO  c.d.p.a.s.ApiCommandCompletionService - Received request for completion subscription 5: CompletionStreamRequest(Some(sandbox),Navigator-078666ce-2781-4ab7-8a1d-45980e0bce24#5c13f272ffc6c23a,Set(Bob),Some(Absolute(000000000000000008))), context: {participant: "sandbox", parties: ["Bob"], offset: "000000000000000008"}
+2022-04-12 18:09:30,067 [canton-env-execution-context-82] INFO  c.d.p.a.s.ApiCommandCompletionService - Received request for completion subscription 4: CompletionStreamRequest(Some(sandbox),Navigator-078666ce-2781-4ab7-8a1d-45980e0bce24#5c13f272ffc6c23a,Set(Alice),Some(Absolute(000000000000000008))), context: {participant: "sandbox", parties: ["Alice"], offset: "000000000000000008"}
+2022-04-12 18:09:30,091 [canton-env-execution-context-32] INFO  c.d.p.a.s.t.ApiTransactionService - Received request for transaction trees., context: {participant: "sandbox", startExclusive: "%begin%", parties: ["Bob"], endInclusive: null, verbose: false, ledgerId: "sandbox"}
+2022-04-12 18:09:30,091 [canton-env-execution-context-29] INFO  c.d.p.a.s.t.ApiTransactionService - Received request for transaction trees., context: {participant: "sandbox", startExclusive: "%begin%", parties: ["Bank"], endInclusive: null, verbose: false, ledgerId: "sandbox"}
+2022-04-12 18:09:30,091 [canton-env-execution-context-46] INFO  c.d.p.a.s.t.ApiTransactionService - Received request for transaction trees., context: {participant: "sandbox", startExclusive: "%begin%", parties: ["Alice"], endInclusive: null, verbose: false, ledgerId: "sandbox"}
+2022-04-12 18:10:18,072 [canton-env-execution-context-25] INFO  c.d.c.p.p.AcsCommitmentProcessor:participant=sandbox/domain=local tid:78a01eb2559418a1f7791cd003e7feba - Deleted buffered commitments and set last computed and sent timestamp set to 2022-04-12T22:10:00Z
+2022-04-12 18:11:09,692 [canton-env-execution-context-23] INFO  c.d.p.a.s.ApiSubmissionService - Submitting transaction, context: {participant: "sandbox", commands: {readAs: [], deduplicationPeriod: {duration: "PT30S"}, submittedAt: "2022-04-12T22:11:09.661734Z", ledgerId: "sandbox", applicationId: "Navigator-078666ce-2781-4ab7-8a1d-45980e0bce24#5c13f272ffc6c23a", actAs: ["Alice"], commandId: "5c258f393128df5a", workflowId: "5c13f272ffc6c23a"}}
+2022-04-12 18:11:09,992 [canton-env-execution-context-23] INFO  c.d.p.a.s.ApiSubmissionService - DAML_AUTHORIZATION_ERROR(8,9a80aee2): Interpretation error: Error: node NodeId(0) (3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df:PowerOfAttorney:PowerOfAttorney) requires authorizers Bob, but only Alice were given, context: {participant: "sandbox", commands: {readAs: [], deduplicationPeriod: {duration: "PT30S"}, submittedAt: "2022-04-12T22:11:09.661734Z", ledgerId: "sandbox", applicationId: "Navigator-078666ce-2781-4ab7-8a1d-45980e0bce24#5c13f272ffc6c23a", actAs: ["Alice"], commandId: "5c258f393128df5a", workflowId: "5c13f272ffc6c23a"}, err-context: "{location=RejectionGenerators.scala:98}"}
+2022-04-12 18:11:10,060 [canton-env-execution-context-23] INFO  c.d.c.n.g.ApiRequestLogger:participant=sandbox tid:7f50d4316bb68d41ad1e9fad2bd29632 - Request c.d.l.a.v.CommandSubmissionService/Submit by /127.0.0.1:54991: failed with INVALID_ARGUMENT/DAML_AUTHORIZATION_ERROR(8,9a80aee2): Interpretation error: Error: node NodeId(0) (3ab785a3ff20f830eccb590c2add42e088339a468cc5569ede01323f398573df:PowerOfAttorney:PowerOfAttorney) requires authorizers Bob, but only Alice were given

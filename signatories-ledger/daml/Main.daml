@@ -1,0 +1,42 @@
+module Main where
+
+import PowerOfAttorney
+
+import Daml.Script
+
+setup : Script ()
+setup = script do
+
+  now <- getTime
+
+  alice <- allocateParty "Alice"
+  bank <- allocateParty "Bank"
+  jay <- allocateParty "Jay"
+
+  submit jay do
+    createCmd PowerOfAttorney
+      with
+        authorizedSignatory = alice -- person authorized to sign
+        legalEntity = bank -- legal entity for which the  authorizedSignatory can sign
+        corporateSecretary = jay -- corporateSecretary makes sure authorizedSignatory and legalEntity are legit
+        authorizedSignatoryRole = "CEO" -- role of autorizedSignatory for this legalEntity
+        issued = now -- time when the power of attorney was issued
+  return ()
+
+test_am : Script ()
+test_am = script do
+
+  now <- getTime
+  peter <- allocateParty "Peter"
+  am <- allocateParty "AM"
+  dave <- allocateParty "Dave"
+
+  submit dave do
+    createCmd PowerOfAttorney
+      with
+        authorizedSignatory = peter -- person authorized to sign
+        legalEntity = am -- legal entity for which the  authorizedSignatory can sign
+        corporateSecretary = dave -- corporateSecretary makes sure authorizedSignatory and legalEntity are legit
+        authorizedSignatoryRole = "CEO" -- role of autorizedSignatory for this legalEntity
+        issued = now -- time when the power of attorney was issued
+  return ()

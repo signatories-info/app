@@ -6,9 +6,9 @@ name: signatories-ledger
 source: daml
 init-script: Main:setup
 parties:
-  - Alice
-  - Bank
-  - Bob
+  - Alice - authorized signatory
+  - Bank - legal entity
+  - Jay - corporate secretary for Bank
 version: 0.0.1
 dependencies:
   - daml-prim

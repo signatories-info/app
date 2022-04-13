@@ -1,5 +1,6 @@
-# signatories-info-app
-Authorized signatories ledger DAML app
+# Authorized signatories ledger DAML app
+
+## Build
 
 run in sandbox
 
@@ -18,3 +19,9 @@ cleanup
 ```
 make clean
 ````
+
+## Screenshots
+
+![script-results-PowerOfAttorney.png](/docs/assets/script-results-PowerOfAttorney.png)
+
+![webapp.png](/docs/assets/webapp.png)

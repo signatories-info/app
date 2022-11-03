@@ -1,0 +1,407 @@
+module PoaSharing where
+
+{-
+POA Management Prototype
+
+-}
+
+import Daml.Script
+import DA.Set (Set)
+import DA.Set qualified as S
+import DA.Exception qualified as E
+
+-- type OrganizationKey = (Party)
+-- type LegalEntityKey = (Party, Party)
+-- type ProposalKey = (Party, Party)
+-- type PoaSharingAgreementKey = (Party, Party)
+
+
+{- |
+Exception for handling invalid Secretary when 
+adding or removing POAs from sharing agreements
+-}
+exception InvalidSecretaryException
+  with
+    code : Int
+    message : Text
+  where
+    message "InvalidSecretaryException(" <> show code <> ", " <> show message <> ")"
+
+
+data OrganizationKey = OrganizationKey
+    with
+        org: Party
+    deriving (Eq, Show)
+
+data LegalEntityKey = LegalEntityKey
+    with
+        org: Party
+        legalEntity: Party
+    deriving (Eq, Show)
+
+data ProposalKey = ProposalKey
+    with
+        entityA: Party
+        entityB: Party
+    deriving (Eq, Show)
+
+data PoaSharingAgreementKey = PoaSharingAgreementKey
+    with
+        entityA: Party
+        entityB: Party
+    deriving (Eq, Show)
+
+
+{- |
+POA Data object for use in PoaSharingAgreement
+-}
+data POA = POA 
+    with
+        party : Party
+        conditions: Text
+    deriving (Eq, Show, Ord)
+
+
+{- |
+Organization template.  Top level contract
+-}
+template Organization
+    with
+        name: Text
+        root: Party
+    where
+        signatory root
+
+        key OrganizationKey root : OrganizationKey
+        maintainer key.org
+
+        nonconsuming choice CreateOrgManager: ContractId OrganizationManager
+            with
+                manager: Party
+            controller root
+            do
+                create OrganizationManager with
+                    org = root
+                    manager      
+
+
+{- |
+Organization Manager template used as a 
+Role Contract to allow a manager to create legal entities.
+Designed to allow the creation of many managers if desired.
+-}
+template OrganizationManager
+    with
+        org: Party
+        manager: Party
+    where
+        signatory org
+        observer manager
+
+        nonconsuming choice CreateLegalEntity: ContractId LegalEntity
+            with
+                name: Text
+                legalEntityRoot: Party
+            controller manager
+            do
+                create LegalEntity with
+                    name
+                    org
+                    legalEntity = legalEntityRoot
+
+
+{- |
+Legal Entity template used as top level Legal Entity contracts.
+-}
+template LegalEntity
+    with
+        name: Text
+        org: Party
+        legalEntity: Party
+    where
+        signatory org
+        observer legalEntity
+
+        key LegalEntityKey org legalEntity : LegalEntityKey
+        maintainer key.org
+
+        -- @TODO move this into Org Manager
+        nonconsuming choice CreateLegalEntitySecretary: ContractId LegalEntitySecretary
+            with
+                secretary: Party
+            controller legalEntity
+            do
+                create LegalEntitySecretary with
+                    legalEntity
+                    secretary
+
+{- |
+Legal Entity Secretary teamplate used as a Role contract.
+Used to create sharing proposals, accept proposals, 
+and Add/Remove POAs from sharing agreements.
+-}
+template LegalEntitySecretary -- Role Contract
+    with
+        legalEntity: Party
+        secretary: Party
+    where
+        signatory legalEntity
+        observer secretary
+
+        nonconsuming choice CreatePoaSharingAgreementProposal: ContractId PoaSharingAgreementProposal
+            with
+                entityB: Party
+                description: Text
+            controller secretary
+            do
+                create PoaSharingAgreementProposal with
+                    entityA = legalEntity
+                    entityB
+                    description
+
+        nonconsuming choice AddPoa : ContractId PoaSharingAgreement
+            with
+                poa: POA
+                poaAgreement: ContractId PoaSharingAgreement -- @TODO could/should be be changed to doing a key?
+            controller secretary
+            do
+                poaData <- fetch poaAgreement
+                if poaData.entityA == legalEntity
+                    then exercise poaAgreement AddPoaToEntityA with poa
+                
+                else if poaData.entityB == legalEntity
+                    then exercise poaAgreement AddPoaToEntityB with poa
+                
+                else
+                    E.throw InvalidSecretaryException with
+                        code = 123
+                        message = "Secretary contract is not for the legal entity"
+
+        nonconsuming choice RemovePoa : ContractId PoaSharingAgreement
+            with
+                poa: POA
+                poaAgreement: ContractId PoaSharingAgreement
+            controller secretary
+            do
+                poaData <- fetch poaAgreement
+                if poaData.entityA == legalEntity
+                    then exercise poaAgreement RemovePoaFromEntityA with poa
+                
+                else if poaData.entityB == legalEntity
+                    then exercise poaAgreement RemovePoaFromEntityB with poa
+                
+                else
+                    E.throw InvalidSecretaryException with
+                        code = 123
+                        message = "Secretary contract is not for the legal entity"
+
+
+        nonconsuming choice AcceptSharingProposal: ContractId PoaSharingAgreement
+            with 
+                proposalCid: ContractId PoaSharingAgreementProposal
+            controller secretary
+            do
+                exercise proposalCid Accept
+
+{- |
+POA Sharing Agreement Proposal template for creating a proposed POA sharing agreement 
+between two parties (legal entities).
+Accepting a proposal creates a PoaSharingAgreement contract.
+-}
+template PoaSharingAgreementProposal
+    with
+        -- @TODO consider adding Org Party for the two LEs
+        entityA: Party
+        entityB: Party
+        description: Text
+
+    where
+        signatory entityA
+        observer entityB
+
+        key ProposalKey entityA entityB: ProposalKey
+        maintainer key.entityA
+    
+        choice Accept: ContractId PoaSharingAgreement
+            controller entityB
+            do
+                create PoaSharingAgreement with
+                    entityA
+                    entityB
+                    description
+                    entityAPoas = S.empty
+                    entityBPoas = S.empty
+
+{- |
+POA Sharing Agreement template used to hold the state of the Sharing Agreement.
+Using the Legal Entity Secretary contracts, secretaries' can add and remove POAs 
+from their respective set.
+
+Entity A or B can archive the agreement for the equivalent of "cancelling" the agreement.
+-}
+template PoaSharingAgreement
+    with 
+        entityA: Party
+        entityB: Party
+        entityAPoas: Set POA
+        entityBPoas: Set POA
+        description: Text
+
+    where
+        signatory entityA, entityB
+
+        key PoaSharingAgreementKey entityA entityB : PoaSharingAgreementKey
+        maintainer key.entityA, key.entityB
+
+
+        choice AddPoaToEntityA : ContractId PoaSharingAgreement
+            with
+                poa: POA
+            controller entityA
+            do
+                create this with
+                    entityAPoas = S.insert poa entityAPoas
+
+        choice AddPoaToEntityB : ContractId PoaSharingAgreement
+            with
+                poa: POA
+            controller entityB
+            do
+                create this with
+                    entityBPoas = S.insert poa entityBPoas
+
+        choice RemovePoaFromEntityB : ContractId PoaSharingAgreement
+            with
+                poa: POA
+            controller entityB
+            do
+                create this with
+                    entityBPoas = S.delete poa entityBPoas
+
+        choice RemovePoaFromEntityA : ContractId PoaSharingAgreement
+            with
+                poa: POA
+            controller entityA
+            do
+                create this with
+                    entityAPoas = S.delete poa entityAPoas
+
+  
+
+normalFlow = script do
+    -- Org 1 Parties:
+    [org1, org1Manager1, legalEntity1, legalEntity1Secretary1, someSignerParty] <- mapA allocateParty ["Org1", "Org1Manager1", "LegalEntity1", "LegalEntity1Secretary1", "SomeSignerParty"]
+    
+    -- Org 2 Parties:
+    [org2, org2Manager1, legalEntity2, legalEntity2Secretary1, someOtherSignerParty] <- mapA allocateParty ["Org2", "Org2Manager1", "LegalEntity2", "LegalEntity2Secretary1", "someOtherSignerParty"]
+
+    -- Setup ORG 1 with LE
+    org1Cid <- submit org1 do
+        createCmd Organization with
+            name = "My Org"
+            root = org1
+
+    org1Manager1Cid <- submit org1 do
+        exerciseCmd org1Cid CreateOrgManager with
+            manager = org1Manager1
+
+
+    le1Cid <- submit org1Manager1 do
+        exerciseCmd org1Manager1Cid CreateLegalEntity with
+            name = "My Legal Entity 1"
+            legalEntityRoot = legalEntity1
+
+
+    le1SecretaryCid <- submit legalEntity1 do
+        exerciseCmd le1Cid CreateLegalEntitySecretary with 
+            secretary = legalEntity1Secretary1
+
+    -- Setup ORG 2 with LE
+    org2Cid <- submit org2 do
+        createCmd Organization with
+            name = "My Org 2"
+            root = org2
+
+    org2Manager1Cid <- submit org2 do
+        exerciseCmd org2Cid CreateOrgManager with
+            manager = org2Manager1
+
+
+    le2Cid <- submit org2Manager1 do
+        exerciseCmd org2Manager1Cid CreateLegalEntity with
+            name = "My Legal Entity 2"
+            legalEntityRoot = legalEntity2
+
+
+    le2SecretaryCid <- submit legalEntity2 do
+        exerciseCmd le2Cid CreateLegalEntitySecretary with 
+            secretary = legalEntity2Secretary1
+
+
+    -- Create PROPOSAL from LE1 to LE2
+    proposalCid <- submit legalEntity1Secretary1 do
+        exerciseCmd le1SecretaryCid CreatePoaSharingAgreementProposal with 
+            entityB = legalEntity2
+            description = "Some proposal to share POAs between A and B"
+
+    -- Secretary from LE2 provides the readAs of legalEntity2
+    -- @TODO can this be simulated with a user-grant-rights ?
+    sharingAgreementCid <- submitMulti [legalEntity2Secretary1] [legalEntity2] do
+        exerciseCmd le2SecretaryCid AcceptSharingProposal with
+            proposalCid = proposalCid
+
+
+    -- LE1 ADD POA
+    let poaForLe1 = POA with
+            party = someSignerParty
+            conditions = "my conditions"
+
+    sharingAgreementCid <- submitMulti [legalEntity1Secretary1] [legalEntity1] do
+        exerciseCmd le1SecretaryCid AddPoa with
+            poa = poaForLe1
+            poaAgreement = sharingAgreementCid
+
+    Some updatedSharingAgreement <- queryContractId legalEntity1 sharingAgreementCid
+
+    assertMsg "POA created in Sharing Agreement does not match" (S.member poaForLe1 updatedSharingAgreement.entityAPoas)
+
+
+    -- LE2 ADD POA
+    let poaForLe2 = POA with
+            party = someOtherSignerParty
+            conditions = "my other conditions for what i am allowed to sign"
+
+    sharingAgreementCid <- submitMulti [legalEntity2Secretary1] [legalEntity2] do
+        exerciseCmd le2SecretaryCid AddPoa with
+            poa = poaForLe2
+            poaAgreement = sharingAgreementCid
+
+    Some updatedSharingAgreement <- queryContractId legalEntity2 sharingAgreementCid
+
+    assertMsg "POA created in Sharing Agreement does not match" (S.member poaForLe2 updatedSharingAgreement.entityBPoas)
+
+
+    -- LE1 REMOVE POA
+    sharingAgreementCid <- submitMulti [legalEntity1Secretary1] [legalEntity1] do
+        exerciseCmd le1SecretaryCid RemovePoa with
+            poa = poaForLe1
+            poaAgreement = sharingAgreementCid
+
+    Some updatedSharingAgreement <- queryContractId legalEntity1 sharingAgreementCid
+
+    assertMsg "POAs for Entity A should be null." (S.null updatedSharingAgreement.entityAPoas)
+
+
+
+    -- LE2 REMOVE POA
+    sharingAgreementCid <- submitMulti [legalEntity2Secretary1] [legalEntity2] do
+        exerciseCmd le2SecretaryCid RemovePoa with
+            poa = poaForLe2
+            poaAgreement = sharingAgreementCid
+
+    Some updatedSharingAgreement <- queryContractId legalEntity2 sharingAgreementCid
+
+    assertMsg "POA for Entity B should be null." (S.null updatedSharingAgreement.entityBPoas)
+
+
+    return ()
